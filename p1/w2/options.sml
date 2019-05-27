@@ -22,12 +22,13 @@ fun really_good_max (xs : int list) =
     else
         let fun max_res (xs : int list) =
                 if null(tl(xs)) then hd(xs)
-                else let val tl_res = max_res(tl(xs))
-        in
-            if hd(xs) > tl_res
-            then hd(xs)
-            else tl_res
-                     end
+                else
+                    let val tl_res = max_res(tl(xs))
+                    in
+                        if hd(xs) > tl_res
+                        then hd(xs)
+                        else tl_res
+                    end;
         in
             SOME (max_res(xs))
         end;
